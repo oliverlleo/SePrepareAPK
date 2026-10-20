@@ -4,7 +4,7 @@
   "packageName": "br.com.orador.app",
   "versionCode": 43,
   "versionName": "1.0.42",
-  "downloadUrl": "https://seprepareapp.com.br/baixar/",
-  "sha256": "c245da1cf65d84ebcbb6b0432af2727391e777cfa1a3127b3637146a38fba222",
-  "releaseNotes": "Aviso de atualização disponível na tela principal, sem interromper o editor ou a apresentação."
+  "downloadUrl": "https://github.com/oliverlleo/SePrepareAPK/releases/download/v1.0.42/SePrepare-1.0.42-ATUALIZACAO.apk",
+  "sha256": "b475e75d5292de99490702d2261f2efd107c6e244dd84ca40607fae0fc74860e",
+  "releaseNotes": "Atualize pelo próprio SePrepare: download com progresso e confirmação de instalação do Android."
 }
