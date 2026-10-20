@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "enabled": true,
   "packageName": "br.com.orador.app",
-  "versionCode": 43,
-  "versionName": "1.0.42",
-  "downloadUrl": "https://github.com/oliverlleo/SePrepareAPK/releases/download/v1.0.42/SePrepare-1.0.42-ATUALIZACAO.apk",
-  "sha256": "b475e75d5292de99490702d2261f2efd107c6e244dd84ca40607fae0fc74860e",
-  "releaseNotes": "Atualize pelo próprio SePrepare: download com progresso e confirmação de instalação do Android."
+  "versionCode": 44,
+  "versionName": "1.0.43",
+  "downloadUrl": "https://github.com/oliverlleo/SePrepareAPK/releases/download/v1.0.43/SePrepare-1.0.43-ATUALIZACAO.apk",
+  "sha256": "9dc65433a16958a768121355f7aa0ff1bf21e4f188a43eb54b1cab3eb95559ca",
+  "releaseNotes": "Removido o ícone de sair da apresentação expandida."
 }
