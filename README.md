@@ -8,7 +8,7 @@ O APK fica como anexo de uma **Release pública deste repositório**. O campo `d
 
 https://github.com/oliverlleo/SePrepareAPK/releases/download/v1.0.42/SePrepare-1.0.42-ATUALIZACAO.apk
 
-Esse é o endereço de distribuição previsto para a versão. O anúncio deve permanecer desativado até que o anexo esteja publicado e conferido. A página Baixar do site não participa deste fluxo.
+A versão 1.0.42 está publicada nessa Release, com o SHA-256 do anexo conferido e o anúncio ativo em `update.json`. A página Baixar do site não participa deste fluxo.
 
 ## Manifesto consultado
 
