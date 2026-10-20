@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "enabled": false,
+  "enabled": true,
   "packageName": "br.com.orador.app",
   "versionCode": 43,
   "versionName": "1.0.42",
