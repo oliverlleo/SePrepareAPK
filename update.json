@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "enabled": false,
+  "packageName": "br.com.orador.app",
+  "versionCode": 42,
+  "versionName": "1.0.41",
+  "downloadUrl": "https://seprepareapp.com.br/baixar/",
+  "sha256": "0aff7b07d5d55d53f5a6ceaf89d64837e56a3d517b44de061bc53c0d26769943",
+  "releaseNotes": "Apoio voluntário ao desenvolvimento na tela de Ajustes."
+}
