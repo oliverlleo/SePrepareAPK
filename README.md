@@ -1,53 +1,55 @@
-# Atualizações do SePrepare para Android
+# SePrepare para Android — atualizações no aplicativo
 
-O leitor deste manifesto está integrado ao **APK 1.0.42, código 43**. Esse APK deve ser instalado uma vez para acrescentar a função a quem ainda usa a 1.0.41. Nas próximas versões, o aplicativo poderá avisar automaticamente quando este JSON anunciar uma atualização mais nova.
+Este repositório público distribui o manifesto de atualização e os APKs assinados do SePrepare. O leitor e o download interno estão integrados ao **APK 1.0.42, código 43**. Instale esse APK uma primeira vez para acrescentar o recurso aos aparelhos que ainda não o têm.
 
-Este repositório público é destinado ao manifesto e à distribuição dos APKs assinados. O código-fonte privado e a chave de assinatura não precisam ser publicados aqui.
+## Onde fica o aplicativo atualizado
 
-## Endereço consultado pelo APK
+O APK fica como anexo de uma **Release pública deste repositório**. O campo `downloadUrl` do JSON deve conter o endereço direto desse arquivo `.apk`, como:
+
+https://github.com/oliverlleo/SePrepareAPK/releases/download/v1.0.42/SePrepare-1.0.42-ATUALIZACAO.apk
+
+Esse é o endereço de distribuição previsto para a versão. O anúncio deve permanecer desativado até que o anexo esteja publicado e conferido. A página Baixar do site não participa deste fluxo.
+
+## Manifesto consultado
 
 https://raw.githubusercontent.com/oliverlleo/SePrepareAPK/main/update.json
 
-A consulta funciona sem login no GitHub. Ela não envia discursos, backups, tokens ou conta Google.
+A consulta funciona sem login no GitHub e não envia discursos, backups, tokens ou conta Google. O aplicativo consulta ao abrir ou retornar ao primeiro plano, com pelo menos 15 minutos entre tentativas na mesma sessão. Não faz consultas periódicas durante o uso nem enquanto permanece em segundo plano.
 
-## Funcionamento
+## Como o usuário atualiza
 
-Ao abrir ou retornar ao primeiro plano, o aplicativo confere o manifesto em execução separada, com pelo menos 15 minutos entre tentativas na mesma sessão. Não fica consultando periodicamente enquanto o usuário continua usando o aplicativo ou o deixa em segundo plano.
+Uma versão mais nova gera um aviso compacto na tela principal com **Agora não** e **Atualizar**. O aviso aguarda o editor, a apresentação, ensaios em andamento, áudio, importação e outras janelas. Fechar evita repetir a mesma oferta durante a sessão.
 
-Uma oferta válida de código maior aparece em um modal compacto na tela principal: **Atualização disponível**, versão, **Agora não** e **Baixar**. O aviso aguarda o editor, a apresentação, ensaios em andamento, áudio em reprodução, outras janelas e mensagens temporárias. A mesma versão não é reapresentada durante a sessão após fechar o aviso.
+**Atualizar baixa o APK dentro do SePrepare**, mostra o progresso e permite **Cancelar** ou **Ocultar**. Ocultar libera o uso do caderno enquanto o DownloadManager continua a transferência. Ao retornar, o aplicativo recupera o download existente.
 
-Baixar abre o endereço validado no navegador externo por escolha do usuário. A instalação fica sob controle do Android. Sem internet ou com resposta inválida, o aplicativo continua funcionando sem mensagem de erro.
+Antes da instalação, o aplicativo confere uma cópia privada do arquivo: SHA-256, pacote, versão esperada e assinatura original. Arquivos incorretos não são instalados. O tamanho máximo é 256 MiB.
 
-## Estado atual do JSON
+Quando o arquivo estiver pronto e o usuário estiver na tela principal, o SePrepare abre o instalador do Android. Se necessário, o Android solicita a permissão para instalar aplicativos desta origem. A confirmação final da atualização é obrigatória. Cancelar a instalação não abre tentativas repetidas; Instalar permite tentar novamente por escolha do usuário.
 
-O arquivo registra a versão **1.0.42, código 43**, com o SHA-256 do APK entregue. O anúncio está suspenso com `enabled: false` até que esse APK seja publicado no endereço de download. Isso não desativa o leitor no aplicativo.
+Não é necessário abrir uma página ou navegador, desinstalar o aplicativo ou apagar os dados.
 
-## Anunciar uma atualização
+## Publicar uma atualização
 
-1. Compile o novo APK com o mesmo pacote e certificado, aumentando o `versionCode`.
-2. Publique o APK em uma Release deste repositório ou no download oficial e confira o endereço.
-3. Edite `update.json`: informe o novo código, o nome da versão, o endereço HTTPS do APK e seu SHA-256. Escreva uma nota curta em `releaseNotes`.
-4. Depois de publicar o APK, defina `enabled: true` e salve na branch `main`.
-
-Para suspender o aviso, altere `enabled` para `false`. Não apague o arquivo.
+1. Aumente o `versionCode` e compile o APK com o mesmo pacote e certificado.
+2. Anexe o APK à Release correspondente neste repositório.
+3. Confira o download e seu SHA-256. Atualize `update.json` na branch `main`.
+4. Ative `enabled: true` somente depois de o arquivo estar disponível. Use `false` para suspender o aviso.
 
 | Campo | Uso |
 | --- | --- |
-| `schemaVersion` | Versão do formato; atualmente 1. |
-| `enabled` | Liga ou suspende o anúncio. |
+| `schemaVersion` | Formato do manifesto; atualmente 1. |
+| `enabled` | Ativa ou suspende o anúncio. |
 | `packageName` | Sempre `br.com.orador.app`. |
-| `versionCode` | Inteiro do manifesto Android; determina se a oferta é mais nova. |
-| `versionName` | Nome da versão mostrado no aviso. |
-| `downloadUrl` | HTTPS do domínio oficial ou de Releases do SePrepareAPK. |
-| `sha256` | SHA-256 do APK informado. |
-| `releaseNotes` | Texto curto, sem HTML. |
+| `versionCode` | Inteiro maior que o código instalado. |
+| `versionName` | Nome da versão apresentado no aviso. |
+| `downloadUrl` | HTTPS direto para o APK de uma Release do SePrepareAPK ou do domínio oficial. |
+| `sha256` | SHA-256 do arquivo publicado. |
+| `releaseNotes` | Nota curta, em texto simples. |
 
-O código publicado precisa ser maior que o instalado. Por exemplo, um aparelho com código 43 recebe um anúncio de código 44, mas não de 43 ou 42. A diferença não é decidida pela ordenação textual do nome da versão.
+O manifesto é limitado a 16 KiB. Falhas de rede ou respostas inválidas não bloqueiam o aplicativo offline. O download segue os redirecionamentos normais do anexo do GitHub, mantendo a conferência do arquivo recebido.
 
-O cliente limita o manifesto a 16 KiB e verifica pacote, formato, versão e endereço antes de aceitar a oferta. O SHA-256 identifica o arquivo; o download é realizado no navegador, e o Android verifica a assinatura ao instalar.
+## Dados que não devem ser publicados
 
-## O que publicar aqui
+Publique somente o manifesto e os APKs destinados à distribuição. **Não publique o ZIP privado do projeto, a pasta signing, senhas ou credenciais.** O ZIP contém a chave original de assinatura, necessária às próximas atualizações.
 
-Somente o manifesto e os APKs destinados à distribuição. **Não envie o ZIP privado do projeto, a pasta de assinatura, senhas ou credenciais.** O ZIP de desenvolvimento contém a chave original necessária às futuras atualizações.
-
-Esta integração é exclusiva do APK Android. Os repositórios SePrepareApp e SePrepareIphone não são alterados.
+Esta integração é exclusiva do APK Android. SePrepareApp e SePrepareIphone não são modificados.
