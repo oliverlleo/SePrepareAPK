@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "enabled": true,
   "packageName": "br.com.orador.app",
-  "versionCode": 44,
-  "versionName": "1.0.43",
-  "downloadUrl": "https://github.com/oliverlleo/SePrepareAPK/releases/download/v1.0.43/SePrepare-1.0.43-ATUALIZACAO.apk",
-  "sha256": "9dc65433a16958a768121355f7aa0ff1bf21e4f188a43eb54b1cab3eb95559ca",
-  "releaseNotes": "Removido o ícone de sair da apresentação expandida."
+  "versionCode": 45,
+  "versionName": "1.0.44",
+  "downloadUrl": "https://github.com/oliverlleo/SePrepareAPK/releases/download/v1.0.44/SePrepare-1.0.44-ATUALIZACAO.apk",
+  "sha256": "cd8802965611fcbc303b7e03c8852be791a1a13257a42fb66c537e37619894a4",
+  "releaseNotes": "Cronômetro corrigido no canto inferior direito. Edições ficam em rascunho até salvar. Guia prático atualizado."
 }
