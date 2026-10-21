@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "enabled": true,
   "packageName": "br.com.orador.app",
-  "versionCode": 45,
-  "versionName": "1.0.44",
-  "downloadUrl": "https://github.com/oliverlleo/SePrepareAPK/releases/download/v1.0.44/SePrepare-1.0.44-ATUALIZACAO.apk",
-  "sha256": "cd8802965611fcbc303b7e03c8852be791a1a13257a42fb66c537e37619894a4",
-  "releaseNotes": "Cronômetro corrigido no canto inferior direito. Edições ficam em rascunho até salvar. Guia prático atualizado."
+  "versionCode": 46,
+  "versionName": "1.0.45",
+  "downloadUrl": "https://github.com/oliverlleo/SePrepareAPK/releases/download/v1.0.45/SePrepare-1.0.45-ATUALIZACAO.apk",
+  "sha256": "b9d3f157afaddde273f17177d39347aa326db3475d068d3bc2feb31a440a8c6f",
+  "releaseNotes": "Análise contextual do texto completo, palavras-chave e destaques mais consistentes. Prévia com contexto e guia prático atualizado."
 }
