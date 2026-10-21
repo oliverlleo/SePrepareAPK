@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "enabled": true,
   "packageName": "br.com.orador.app",
-  "versionCode": 46,
-  "versionName": "1.0.45",
-  "downloadUrl": "https://github.com/oliverlleo/SePrepareAPK/releases/download/v1.0.45/SePrepare-1.0.45-ATUALIZACAO.apk",
-  "sha256": "b9d3f157afaddde273f17177d39347aa326db3475d068d3bc2feb31a440a8c6f",
-  "releaseNotes": "Análise contextual do texto completo, palavras-chave e destaques mais consistentes. Prévia com contexto e guia prático atualizado."
+  "versionCode": 47,
+  "versionName": "1.0.46",
+  "downloadUrl": "https://github.com/oliverlleo/SePrepareAPK/releases/download/v1.0.46/SePrepare-1.0.46-ATUALIZACAO.apk",
+  "sha256": "2087de51dc7d825048166931fa3e034512bac050fc7cbc770565aef7281e201a",
+  "releaseNotes": "Seleção de idioma nos Ajustes: português, inglês, espanhol e japonês. Interface traduzida offline, preferência salva e guia atualizado. Seus textos permanecem como foram escritos."
 }
