@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "enabled": true,
   "packageName": "br.com.orador.app",
-  "versionCode": 47,
-  "versionName": "1.0.46",
-  "downloadUrl": "https://github.com/oliverlleo/SePrepareAPK/releases/download/v1.0.46/SePrepare-1.0.46-ATUALIZACAO.apk",
-  "sha256": "2087de51dc7d825048166931fa3e034512bac050fc7cbc770565aef7281e201a",
-  "releaseNotes": "Seleção de idioma nos Ajustes: português, inglês, espanhol e japonês. Interface traduzida offline, preferência salva e guia atualizado. Seus textos permanecem como foram escritos."
+  "versionCode": 51,
+  "versionName": "1.0.50",
+  "downloadUrl": "https://github.com/oliverlleo/SePrepareAPK/releases/download/v1.0.50/SePrepare-1.0.50-ATUALIZACAO.apk",
+  "sha256": "102cc8276a8a4b67c0bbbf658636c0419a7bac0ef495f564928d9437ef88b067",
+  "releaseNotes": "Barra para avançar e recuar na leitura em voz alta. Teste de voz com frase própria nos Ajustes e botão flutuante de parada que pode ser arrastado. Guia prático atualizado."
 }
