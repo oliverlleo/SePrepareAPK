@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "enabled": true,
   "packageName": "br.com.orador.app",
-  "versionCode": 54,
-  "versionName": "1.0.53",
-  "downloadUrl": "https://github.com/oliverlleo/SePrepareAPK/releases/download/v1.0.53/SePrepare-1.0.53-ATUALIZACAO.apk",
-  "sha256": "c6945e67661962078bc5959793846329e00c2af890a7e41d90d2ac062bd07cdb",
-  "releaseNotes": "Seletor de voz de leitura exibe somente vozes offline efetivamente baixadas e instaladas no aparelho (além da Voz padrão do aparelho). Removido o texto desnecessário abaixo do seletor de voz. Mantida a seleção automática da Voz 1 ao mudar o idioma do aplicativo nos Ajustes."
+  "versionCode": 55,
+  "versionName": "1.0.54",
+  "downloadUrl": "https://github.com/oliverlleo/SePrepareAPK/releases/download/v1.0.54/SePrepare-1.0.54-ATUALIZACAO.apk",
+  "sha256": "e37e964da42fa77c1e0b90d3ce38f07c13599eed7f99a362ddc56fda1c0a6636",
+  "releaseNotes": "Backup automático após alterações reais, com intervalo mínimo de 10 segundos entre requisições ao Drive. Nuvens nos cards indicam a cópia confirmada de cada preparação. Ajustes de backup redesenhados, com controles e ações manuais em Opções avançadas. Backup e recuperação automáticos ativados por padrão, respeitando escolhas anteriores. Autorização do Drive simplificada e novas tentativas após falhas, mantendo versões e pontos de recuperação."
 }
