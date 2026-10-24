@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "enabled": true,
   "packageName": "br.com.orador.app",
-  "versionCode": 55,
-  "versionName": "1.0.54",
-  "downloadUrl": "https://github.com/oliverlleo/SePrepareAPK/releases/download/v1.0.54/SePrepare-1.0.54-ATUALIZACAO.apk",
-  "sha256": "e37e964da42fa77c1e0b90d3ce38f07c13599eed7f99a362ddc56fda1c0a6636",
-  "releaseNotes": "Backup automático após alterações reais, com intervalo mínimo de 10 segundos entre requisições ao Drive. Nuvens nos cards indicam a cópia confirmada de cada preparação. Ajustes de backup redesenhados, com controles e ações manuais em Opções avançadas. Backup e recuperação automáticos ativados por padrão, respeitando escolhas anteriores. Autorização do Drive simplificada e novas tentativas após falhas, mantendo versões e pontos de recuperação."
+  "versionCode": 56,
+  "versionName": "1.0.55",
+  "downloadUrl": "https://github.com/oliverlleo/SePrepareAPK/releases/download/v1.0.55/SePrepare-1.0.55-ATUALIZACAO.apk",
+  "sha256": "517c577b588e787d4905f79599a7ce6c097ca68c691094b389b97d194fca44a6",
+  "releaseNotes": "Corrigidos avisos indevidos de conta desconectada durante o backup, com renovação automática da sessão do Google quando possível. Comparação do conteúdo real de textos, formatação, anotações, versões e dados das preparações, sem tratar diferenças internas do editor como conflito. Cópias idênticas e backups enviados pelo próprio aparelho são reconhecidos para evitar restaurações e perguntas repetidas. Alterações em campos independentes podem ser combinadas com segurança quando existe uma cópia comum confirmada. Conflitos reais mostram os campos e trechos diferentes, preservando a escolha e as versões. Mantidos backup e recuperação automáticos, intervalo mínimo de 10 segundos e quatro pontos de recuperação."
 }
