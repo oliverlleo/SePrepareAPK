@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "enabled": true,
   "packageName": "br.com.orador.app",
-  "versionCode": 63,
-  "versionName": "1.0.62",
-  "downloadUrl": "https://github.com/oliverlleo/SePrepareAPK/releases/download/v1.0.62/SePrepare-1.0.62-ATUALIZACAO.apk",
-  "sha256": "539201a3cdeba91c0d67c4d51998dec13913bf92b0ebebe02d665fa746fbc6e3",
-  "releaseNotes": "AJUSTES COM MELHOR ACABAMENTO\n\nModais de Revisão de português, Notificações, Privacidade, Idioma e Aparência com margens regulares, conteúdo organizado e tamanho proporcional à tela.\n\nRITMOS COM ACESSO DIRETO\n\nRitmos de apresentação abre diretamente Gerenciar ritmos, com Padrão e personalizados na mesma lista. A edição e o salvamento continuam usando o funcionamento existente.\n\nCELULAR E TABLET\n\nCategorias em colunas independentes nas telas maiores, sem grandes espaços vazios. No celular, uma coluna. Modais adaptados à orientação horizontal, com rolagem interna quando necessário.\n\nBusca nos Ajustes, temas claro e escuro e os quatro idiomas preservados. Backup, compartilhamento, áudio, conteúdo e versões mantêm os mecanismos existentes.\n\nATUALIZAÇÃO\n\nVersão 1.0.62, código 63. APK assinado com o certificado original, para atualizar sem desinstalar. A descrição completa está na release."
+  "versionCode": 64,
+  "versionName": "1.0.63",
+  "downloadUrl": "https://github.com/oliverlleo/SePrepareAPK/releases/download/v1.0.63/SePrepare-1.0.63-ATUALIZACAO.apk",
+  "sha256": "cde13895c21d72488afa41bbd7cad37ae345e44134b2254517d7dbc6b371b333",
+  "releaseNotes": "RITMO PADRÃO IDENTIFICADO NO TEXTO\n\nAo aplicar um ritmo a um trecho, o aplicativo também identifica os trechos em Padrão antes e depois dele. A marcação fica sempre antes do texto correspondente, inclusive quando o ritmo está no meio do mesmo parágrafo.\n\nTEXTO TODO EM PADRÃO\n\nSe nenhum trecho tiver um ritmo aplicado, as indicações de Padrão ficam ocultas. Ter ritmos cadastrados não faz as marcas aparecerem. Ao remover o último ritmo aplicado, elas voltam a ficar ocultas.\n\nBARRA COLORIDA OU NOME DO RITMO\n\nAs indicações seguem a identificação escolhida: Barra colorida ou Nome do ritmo. No leitor, a opção Mostrar ritmos continua sendo respeitada.\n\nCONTEÚDO PRESERVADO\n\nAs marcações são visuais e não acrescentam palavras ao texto. As estruturas de conteúdo, versões, anotações, backup e compartilhamento permanecem compatíveis.\n\nATUALIZAÇÃO\n\nVersão 1.0.63, código Android 64. APK de release assinado com o mesmo certificado original para atualizar sem desinstalar."
 }
