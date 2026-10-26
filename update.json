@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "enabled": true,
   "packageName": "br.com.orador.app",
-  "versionCode": 57,
-  "versionName": "1.0.56",
-  "downloadUrl": "https://github.com/oliverlleo/SePrepareAPK/releases/download/v1.0.56/SePrepare-1.0.56-ATUALIZACAO.apk",
-  "sha256": "e291cfe48695dcefd64780dfa624a84307620a6c144b031def88234ba9b7dc17",
-  "releaseNotes": "Corrigida a atualização da nuvem dos cards após o backup. A confirmação é enviada à tela assim que a cópia foi salva e registrada no aparelho, sem aguardar a limpeza das cópias antigas e sem precisar trocar de página. Confirmações de cópias anteriores não marcam alterações mais recentes como salvas. Mantidas todas as correções da versão 1.0.55, os automatismos e as quatro cópias de recuperação."
+  "versionCode": 58,
+  "versionName": "1.0.57",
+  "downloadUrl": "https://github.com/oliverlleo/SePrepareAPK/releases/download/v1.0.57/SePrepare-1.0.57-ATUALIZACAO.apk",
+  "sha256": "55a10b2193523c3b735d3db8916f7a483300526bd37da9659c75131e31dfef5d",
+  "releaseNotes": "Sistema opcional de ritmos personalizados no editor e na apresentação. Aplique um ritmo à seleção ou continue digitando com ele; etiquetas discretas identificam os trechos. O tempo estimado considera cada ritmo, indica proximidade ou excesso da duração prevista e oferece um resumo detalhado ao toque. Gerencie nomes e velocidades nos Ajustes. Ritmos preservados por versão, backup e compartilhamento, com opção de receber sem cadastrá-los. Mantidas as funções existentes e a compatibilidade de atualização do Android."
 }
