@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "enabled": true,
   "packageName": "br.com.orador.app",
-  "versionCode": 58,
-  "versionName": "1.0.57",
-  "downloadUrl": "https://github.com/oliverlleo/SePrepareAPK/releases/download/v1.0.57/SePrepare-1.0.57-ATUALIZACAO.apk",
-  "sha256": "55a10b2193523c3b735d3db8916f7a483300526bd37da9659c75131e31dfef5d",
-  "releaseNotes": "Sistema opcional de ritmos personalizados no editor e na apresentação. Aplique um ritmo à seleção ou continue digitando com ele; etiquetas discretas identificam os trechos. O tempo estimado considera cada ritmo, indica proximidade ou excesso da duração prevista e oferece um resumo detalhado ao toque. Gerencie nomes e velocidades nos Ajustes. Ritmos preservados por versão, backup e compartilhamento, com opção de receber sem cadastrá-los. Mantidas as funções existentes e a compatibilidade de atualização do Android."
+  "versionCode": 59,
+  "versionName": "1.0.58",
+  "downloadUrl": "https://github.com/oliverlleo/SePrepareAPK/releases/download/v1.0.58/SePrepare-1.0.58-ATUALIZACAO.apk",
+  "sha256": "6401a6e6c5cee331b7c691f0c790a0405fe7e2c77c4bc2be107cebb1d015181f",
+  "releaseNotes": "Importação reorganizada: categoria, agendamento e ritmos ficam no alto, abaixo da versão para conferir. Traços verticais coloridos passam a identificar os ritmos por padrão, com a alternativa Nome no próprio seletor. Cada ritmo recebe uma cor distinta, preservada nas edições e tratada ao importar. Rodapé transparente mantido no editor expandido, com botão Página e X para ocultar somente o rodapé até mudar de modo. Gestos existentes, conteúdo, cálculos, versões, compartilhamento e backup preservados."
 }
