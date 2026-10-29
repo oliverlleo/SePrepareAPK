@@ -344,4 +344,135 @@ function createFakePlayer(voices = [
   controller.stop();
 }
 
+// --- Test 4: Native Android OradorNative bridge (permission granted & runtime request + probe + RMS speech/silence + stop during TTS) ---
+{
+  let fakeNow = 5000;
+  let intervalCb = null;
+  let nativePermGranted = false;
+  let nativeMicRunning = false;
+  let currentRms = 0.003;
+  const listeners = new Map();
+  const fakeEventTarget = {
+    addEventListener(ev, fn) { listeners.set(ev, fn); },
+    removeEventListener(ev, fn) { if (listeners.get(ev) === fn) listeners.delete(ev); }
+  };
+  const fakeOradorNative = {
+    hasMicPermission: () => nativePermGranted,
+    requestMicPermission() {
+      nativePermGranted = true;
+      listeners.get('nativeMicPermission')?.({ detail: { granted: true } });
+    },
+    probeMicMonitor: () => JSON.stringify({ ok: nativePermGranted, code: nativePermGranted ? 'ok' : 'permission-denied' }),
+    startMicMonitor: () => {
+      nativeMicRunning = true;
+      return JSON.stringify({ ok: true, code: 'ok' });
+    },
+    pollMicMonitor: () => JSON.stringify(nativeMicRunning ? { ok: true, rms: currentRms } : { ok: false, code: 'stopped' }),
+    stopMicMonitor() { nativeMicRunning = false; }
+  };
+
+  const nativeVad = createRehearsalVad({
+    nativeBridge: fakeOradorNative,
+    eventTarget: fakeEventTarget,
+    now: () => fakeNow,
+    setIntervalFn: fn => { intervalCb = fn; return 77; },
+    clearIntervalFn: () => { intervalCb = null; }
+  });
+  const advanceMs = (ms, amp) => {
+    currentRms = amp;
+    for (let i = 0; i < Math.round(ms / 60); i += 1) {
+      fakeNow += 60;
+      intervalCb?.();
+    }
+  };
+  const fakePlayer = createFakePlayer();
+  const audio = createRehearsalAudio({ player: fakePlayer, getSettings: () => ({ language: 'pt-BR', rate: 1 }) });
+  const controller = createRehearsalController({ audio, vad: nativeVad });
+
+  const startRes = await controller.start({ speech: makeThreeSpeakerPart('p1'), mode: 'auto', silenceSeconds: 2 });
+  assert.equal(startRes.mode, 'auto', 'Android native mic stays in auto mode when permission granted');
+  assert.equal(controller.getSnapshot().state, 'listening');
+  assert.equal(nativeMicRunning, true, 'Native AudioRecord active on user turn');
+
+  advanceMs(480, 0.08);
+  advanceMs(2100, 0.003);
+  await new Promise(r => setTimeout(r, 0));
+  assert.equal(controller.getSnapshot().currentTurnIndex, 1, 'Native RMS advances turn after speech + 2s silence');
+  assert.equal(controller.getSnapshot().state, 'narrating');
+  assert.equal(nativeMicRunning, false, 'Native AudioRecord released completely during TTS turn');
+  controller.stop();
+}
+
+// --- Test 5: Browser getUserMedia NotReadableError on DSP constraints succeeds via { audio: true } fallback + survives idle track interruption during TTS ---
+{
+  let fakeNow = 9000;
+  let intervalCb = null;
+  let currentAmplitude = 0.004;
+  let gumCalls = [];
+  let activeFakeTrack = null;
+  const fallbackVad = createRehearsalVad({
+    now: () => fakeNow,
+    setIntervalFn: fn => { intervalCb = fn; return 88; },
+    clearIntervalFn: () => { intervalCb = null; },
+    setTimeoutFn: fn => { fn(); return 1; },
+    clearTimeoutFn: () => {},
+    mediaDevices: {
+      async getUserMedia(constraints) {
+        gumCalls.push(constraints);
+        if (typeof constraints?.audio === 'object') {
+          const err = new Error('Could not start audio source');
+          err.name = 'NotReadableError';
+          throw err;
+        }
+        let endedCb = null;
+        activeFakeTrack = {
+          enabled: true,
+          readyState: 'live',
+          stop() { this.readyState = 'ended'; },
+          addEventListener(ev, fn) { if (ev === 'ended') endedCb = fn; },
+          removeEventListener(ev, fn) { if (ev === 'ended' && endedCb === fn) endedCb = null; },
+          triggerEnded() { this.readyState = 'ended'; endedCb?.(); }
+        };
+        return { getAudioTracks: () => [activeFakeTrack], getTracks: () => [activeFakeTrack] };
+      }
+    },
+    AudioContextClass: class {
+      constructor() { this.state = 'suspended'; this.destination = {}; }
+      async resume() { this.state = 'running'; }
+      createMediaStreamSource() { return { connect() {}, disconnect() {} }; }
+      createAnalyser() { return { fftSize: 256, smoothingTimeConstant: 0.25, connect() {}, disconnect() {}, getFloatTimeDomainData(buf) { buf.fill(currentAmplitude); } }; }
+      createGain() { return { gain: { value: 1 }, connect() {}, disconnect() {} }; }
+      async close() { this.state = 'closed'; }
+    }
+  });
+  const advanceMs = (ms, amp) => {
+    currentAmplitude = amp;
+    for (let i = 0; i < Math.round(ms / 60); i += 1) { fakeNow += 60; intervalCb?.(); }
+  };
+  const fakePlayer = createFakePlayer();
+  const audio = createRehearsalAudio({ player: fakePlayer, getSettings: () => ({ language: 'pt-BR', rate: 1 }) });
+  const controller = createRehearsalController({ audio, vad: fallbackVad });
+
+  // Start where p2 (Maria) is user -> Turn 0 is João (narrating), Turn 1 is Maria (user listening)
+  const startRes = await controller.start({ speech: makeThreeSpeakerPart('p2'), mode: 'auto', silenceSeconds: 2 });
+  assert.equal(startRes.mode, 'auto', 'Recovered from NotReadableError via { audio: true } fallback');
+  assert.equal(gumCalls.length, 2, 'Retried with plain { audio: true } after processed constraint failure');
+  assert.equal(controller.getSnapshot().state, 'narrating');
+
+  // Simulate iOS AVAudioSession killing idle mic track during João's TTS narration
+  activeFakeTrack.triggerEnded();
+  assert.equal(controller.getSnapshot().mode, 'auto', 'Idle track interruption during TTS must NOT drop to Manual');
+
+  // João finishes -> Maria's turn starts and seamlessly re-acquires mic!
+  fakePlayer.finishCurrent();
+  await new Promise(r => setTimeout(r, 10));
+  assert.equal(controller.getSnapshot().mode, 'auto');
+  assert.equal(controller.getSnapshot().state, 'listening');
+  advanceMs(480, 0.09);
+  advanceMs(2100, 0.004);
+  await new Promise(r => setTimeout(r, 0));
+  assert.equal(controller.getSnapshot().currentTurnIndex, 2);
+  controller.stop();
+}
+
 console.log('OK: interactive-rehearsal-audio, vad, and controller passed all unit & state-machine checks.');

@@ -38,6 +38,7 @@ public final class MainActivity extends Activity {
     private final ExecutorService jobs = Executors.newSingleThreadExecutor();
     private static final int REQ_RECORD_AUDIO = 52;
     private PermissionRequest pendingWebAudioRequest = null;
+    private final MicMonitor micMonitor = new MicMonitor();
     private static WeakReference<MainActivity> current = new WeakReference<>(null);
     static void send(String name, JSONObject data) {
         MainActivity a = current.get();
@@ -201,7 +202,7 @@ public final class MainActivity extends Activity {
     @Override public void onBackPressed() {
         web.evaluateJavascript("window.oradorBack ? window.oradorBack() : false", value -> { if (!"true".equals(value)) MainActivity.super.onBackPressed(); });
     }
-    @Override protected void onPause() {
+    @Override protected void onPause() { micMonitor.stop();
         DriveController.foreground(this,false);
         if (updateInstaller != null) updateInstaller.pause();
         if (loaded) emit("nativeBackground", object());
@@ -220,7 +221,7 @@ public final class MainActivity extends Activity {
             try { String state=store.get("state"); if(!state.isEmpty()) ReminderScheduler.sync(this,new JSONObject(state),false); } catch(Exception ignored) { }
         }
     }
-    @Override protected void onDestroy() {
+    @Override protected void onDestroy() { micMonitor.stop();
         ++voicesGeneration; voicesReady = false;
         if (pendingWebAudioRequest != null) {
             try { pendingWebAudioRequest.deny(); } catch (RuntimeException ignored) { }
@@ -244,15 +245,16 @@ public final class MainActivity extends Activity {
     @Override public void onRequestPermissionsResult(int req, String[] perms, int[] granted) {
         super.onRequestPermissionsResult(req, perms, granted);
         if (req == REQ_RECORD_AUDIO) {
+            boolean allowed = !isFinishing() && !isDestroyed() && granted != null && granted.length > 0 && granted[0] == PackageManager.PERMISSION_GRANTED;
             PermissionRequest pending = pendingWebAudioRequest;
             pendingWebAudioRequest = null;
             if (pending != null) {
-                boolean allowed = !isFinishing() && !isDestroyed() && granted != null && granted.length > 0 && granted[0] == PackageManager.PERMISSION_GRANTED;
                 try {
                     if (allowed) pending.grant(new String[]{ PermissionRequest.RESOURCE_AUDIO_CAPTURE });
                     else pending.deny();
                 } catch (RuntimeException ignored) { }
             }
+            emit("nativeMicPermission", object("granted", allowed));
         }
         emit("nativePermissions", object("status", permissions()));
     }
@@ -386,7 +388,43 @@ public final class MainActivity extends Activity {
         @JavascriptInterface public void speakInLanguage(String title, String text, int offset, String voice, float rate, String language) {
             speakSession(title, text, offset, voice, rate, language, java.util.UUID.randomUUID().toString());
         }
-        @JavascriptInterface public void speakSession(String title, String text, int offset, String voice, float rate, String language, String requestId) {
+        @JavascriptInterface public boolean hasMicPermission() {
+            return checkSelfPermission(Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED;
+        }
+        @JavascriptInterface public void requestMicPermission() {
+            runOnUiThread(() -> {
+                if (isFinishing() || isDestroyed()) {
+                    emit("nativeMicPermission", object("granted", false));
+                    return;
+                }
+                if (checkSelfPermission(Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED) {
+                    emit("nativeMicPermission", object("granted", true));
+                    return;
+                }
+                requestPermissions(new String[]{ Manifest.permission.RECORD_AUDIO }, REQ_RECORD_AUDIO);
+            });
+        }
+        @JavascriptInterface public String probeMicMonitor() {
+            if (checkSelfPermission(Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
+                return object("ok", false, "code", "permission-denied").toString();
+            }
+            String status = micMonitor.probe();
+            return object("ok", "ok".equals(status), "code", status).toString();
+        }
+        @JavascriptInterface public String startMicMonitor() {
+            if (checkSelfPermission(Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
+                return object("ok", false, "code", "permission-denied").toString();
+            }
+            String status = micMonitor.start(() -> emit("nativeMicError", object("code", "stream-lost")));
+            return object("ok", "ok".equals(status), "code", status).toString();
+        }
+        @JavascriptInterface public String pollMicMonitor() {
+            return micMonitor.poll();
+        }
+        @JavascriptInterface public void stopMicMonitor() {
+            micMonitor.stop();
+        }
+        @JavascriptInterface public void speakSession(String title, String text, int offset, String voice, float rate, String language, String requestId) { micMonitor.stop();
             Intent i = new Intent(MainActivity.this, SpeechService.class).setAction("speak");
             i.putExtra("title", title).putExtra("text", text).putExtra("offset", offset).putExtra("voice", voice).putExtra("rate", rate).putExtra("language", language).putExtra("requestId", requestId);
             runOnUiThread(() -> startForegroundService(i));
