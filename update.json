@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "enabled": true,
   "packageName": "br.com.orador.app",
-  "versionCode": 78,
-  "versionName": "1.0.77",
-  "downloadUrl": "https://github.com/oliverlleo/SePrepareAPK/releases/download/v1.0.77/SePrepare-1.0.77-ATUALIZACAO.apk",
-  "sha256": "aa032dbea2ffb1a398325dcfd9186d23db5ec365a337ae61411f8b80d20c69cb",
-  "releaseNotes": "SePrepare 1.0.77 — Memorização inteligente\n\n• Acesse Memorizar pelo menu do discurso ou pelo seletor da Apresentação.\n• Gere cartões no aparelho a partir das ideias, títulos, listas e destaques do texto. O MiniLM auxilia na similaridade; perguntas e respostas permanecem fundamentadas no discurso, com alternativa leve offline.\n• Crie e edite perguntas, palavras-chave e pistas. Divida, una, exclua e reorganize cartões sem alterar o texto original.\n• Estude uma ideia por vez, peça pistas e revele o trecho quando desejar. Avalie Não lembrei, Com ajuda ou Lembrei sozinho para organizar as próximas revisões.\n• Continue de onde parou e revise os cartões difíceis. Cada versão possui seu conjunto e seu progresso.\n• Ao trocar de modo, confirme a pausa do áudio e do cronômetro. O tempo e o ensaio são preservados, sem reinício automático.\n• Cartões e avaliações acompanham backup e restauração. Registros dos aparelhos são unidos sem duplicação; compartilhamento comum não inclui o aprendizado pessoal.\n• Interface clara e escura, cartões animados e layout adaptado a celulares, tablets e computadores. Disponível no Android, Windows/PWA e Apple/PWA.\n\nAPK assinado com o certificado original: versão 1.0.77, código 78, para atualizar a instalação existente."
+  "versionCode": 79,
+  "versionName": "1.0.78",
+  "downloadUrl": "https://github.com/oliverlleo/SePrepareAPK/releases/download/v1.0.78/SePrepare-1.0.78-ATUALIZACAO.apk",
+  "sha256": "f1f5142f767720c8653627a3a8ed283d34704a19c81be1ca99fe897dd46d3471",
+  "releaseNotes": "SePrepare 1.0.78 — Ações dos cartões mais acessíveis\n\n• Começar a memorizar, Atualizar cartões do texto e Voltar aos cartões agora ficam acima da lista, sem precisar percorrer todos os cartões.\n• A faixa permanece acessível durante a rolagem.\n• Os três botões ficam em uma única linha. Em celulares, os rótulos são Memorizar, Atualizar e Voltar; telas maiores exibem os nomes completos.\n• Mantidos os ícones, a área de toque e a identificação completa das ações.\n• Ajuste aplicado ao APK Android, ao SePrepareApp no Windows/PWA e ao SePrepareIphone no Apple/PWA.\n\nVerificado nos temas claro e escuro, com larguras de 320 a 1366 px. As ações de começar, atualizar e voltar continuam funcionando.\n\nAPK 1.0.78, código 79, assinado com o certificado original para atualizar a instalação existente."
 }
