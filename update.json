@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "enabled": true,
   "packageName": "br.com.orador.app",
-  "versionCode": 76,
-  "versionName": "1.0.75",
-  "downloadUrl": "https://github.com/oliverlleo/SePrepareAPK/releases/download/v1.0.75/SePrepare-1.0.75-ATUALIZACAO.apk",
-  "sha256": "da675d4fa5c00b1edd2736b01f0074ba0cbc680a5f7af02b37c5041462524e2c",
-  "releaseNotes": "SePrepare 1.0.75\n\nMelhorias de layout e responsividade\n\n• Cards de discursos e demonstrações: indicadores, categoria, nuvem e título alinhados no topo, mesmo quando os textos têm tamanhos diferentes. As ações continuam alinhadas na base.\n• Editor em tablets e telas largas: os botões usam a largura necessária para seus nomes. “Formatar” e “Marcar tempo” deixam de ser comprimidos ou dividir palavras sem necessidade.\n• A barrinha laranja de rolagem fica abaixo dos ícones de formatação, sem ocupar espaço entre as ferramentas.\n• Preservada a disposição compacta do celular na vertical.\n\nCompatibilidade e atualização\n\nMantidos os dados, ritmos, marcações de tempo, voz e ensaio interativo. Verificados os fluxos de backup, importação e compartilhamento com dados de teste.\n\nAPK 1.0.75, código 76, assinado com o mesmo certificado da 1.0.74 para atualizar o aplicativo instalado. Correções também aplicadas às versões Windows e PWA Apple, respeitando suas adaptações."
+  "versionCode": 77,
+  "versionName": "1.0.76",
+  "downloadUrl": "https://github.com/oliverlleo/SePrepareAPK/releases/download/v1.0.76/SePrepare-1.0.76-ATUALIZACAO.apk",
+  "sha256": "9fab6333037394fabc0cf4d03393982176b40a5693dd7ac1c62aad22654b7ac9",
+  "releaseNotes": "SePrepare 1.0.76\n\nDiagnóstico de atualizações no Android\n\n• Nova opção em Ajustes → Ajuda e informações → Atualizações do aplicativo, também encontrada pela busca.\n• Mostra a versão e o código instalados, a versão publicada, a data da última consulta e seu resultado.\n• Verificar atualizações agora consulta o servidor sem esperar o intervalo automático e impede pedidos duplicados enquanto verifica.\n• Distingue falha de conexão, DNS, timeout, conexão segura, erro HTTP, manifesto inválido, versão igual ou anterior, anúncio desativado e APK indisponível.\n• Quando há uma versão superior válida, confirma a disponibilidade do APK sem baixar o arquivo inteiro. Download e instalação continuam como ações separadas.\n• O último diagnóstico permanece ao reabrir. Depois de instalar, ele é comparado à nova versão instalada.\n\nPreservação e atualização\n\nMantidos textos, versões, ritmos, ensaio por voz, backup, importação e compartilhamento. A instalação continua conferindo SHA-256, pacote, versão e certificado original.\n\nAPK 1.0.76, código 77, assinado para atualizar a versão existente. Alteração somente no Android."
 }
