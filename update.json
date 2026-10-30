@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "enabled": true,
   "packageName": "br.com.orador.app",
-  "versionCode": 75,
-  "versionName": "1.0.74",
-  "downloadUrl": "https://github.com/oliverlleo/SePrepareAPK/releases/download/v1.0.74/SePrepare-1.0.74-ATUALIZACAO.apk",
-  "sha256": "be616b123981ba5c98949090ff377d6492e905aedf6c1c7a21cad88b90ecdd3b",
-  "releaseNotes": "SePrepare 1.0.74\n\nEnsaio interativo com detecção de fala\n\n• O modo Automático agora usa um modelo local para distinguir fala de ruídos. O volume do microfone deixou de ser o critério para avançar.\n• A leitura do outro participante começa após a pausa de 2, 3 ou 5 segundos sem fala detectada, mesmo com ruído de fundo.\n• Sons isolados não iniciam sua vez nem ficam zerando a contagem. A pausa começa somente depois que você fala.\n• Ganho automático do microfone desativado para evitar amplificar o ambiente nas pausas.\n• Microfone desligado durante a narração, ao pausar e ao sair. Nenhum áudio é salvo ou enviado.\n• Se a detecção falhar, o ensaio preserva sua vez e passa ao modo Manual com aviso.\n\nCompatibilidade\n\nMantidos os controles, ritmos, marcações de tempo, vozes e dados existentes. Testes de backup, importação e compartilhamento passaram.\n\nAPK 1.0.74, código 75, assinado com o mesmo certificado da 1.0.73 para atualização direta. Alteração somente no Android; o site, o Windows e o PWA não foram atualizados nesta entrega."
+  "versionCode": 76,
+  "versionName": "1.0.75",
+  "downloadUrl": "https://github.com/oliverlleo/SePrepareAPK/releases/download/v1.0.75/SePrepare-1.0.75-ATUALIZACAO.apk",
+  "sha256": "da675d4fa5c00b1edd2736b01f0074ba0cbc680a5f7af02b37c5041462524e2c",
+  "releaseNotes": "SePrepare 1.0.75\n\nMelhorias de layout e responsividade\n\n• Cards de discursos e demonstrações: indicadores, categoria, nuvem e título alinhados no topo, mesmo quando os textos têm tamanhos diferentes. As ações continuam alinhadas na base.\n• Editor em tablets e telas largas: os botões usam a largura necessária para seus nomes. “Formatar” e “Marcar tempo” deixam de ser comprimidos ou dividir palavras sem necessidade.\n• A barrinha laranja de rolagem fica abaixo dos ícones de formatação, sem ocupar espaço entre as ferramentas.\n• Preservada a disposição compacta do celular na vertical.\n\nCompatibilidade e atualização\n\nMantidos os dados, ritmos, marcações de tempo, voz e ensaio interativo. Verificados os fluxos de backup, importação e compartilhamento com dados de teste.\n\nAPK 1.0.75, código 76, assinado com o mesmo certificado da 1.0.74 para atualizar o aplicativo instalado. Correções também aplicadas às versões Windows e PWA Apple, respeitando suas adaptações."
 }
