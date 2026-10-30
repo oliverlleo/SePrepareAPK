@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "enabled": true,
   "packageName": "br.com.orador.app",
-  "versionCode": 73,
-  "versionName": "1.0.72",
-  "downloadUrl": "https://github.com/oliverlleo/SePrepareAPK/releases/download/v1.0.72/SePrepare-1.0.72-ATUALIZACAO.apk",
-  "sha256": "074bc8cafd2cee0d0cb5b1de359d497078975848bf1a08f34d6f77e4120a31eb",
-  "releaseNotes": "SePrepare 1.0.72\n\nCONTROLES CENTRALIZADOS\n\nA faixa dos seis controles da apresentação agora fica centralizada, com espaço equilibrado dos dois lados. Em telas largas, o conjunto do cronômetro e dos atalhos também é centralizado. Mantidos os botões na mesma linha, sem sobreposição, o cronômetro compacto e a área de toque de 44 px.\n\nSEGURE PARA VER O NOME\n\nSegurar um botão da apresentação mostra seu nome, seguindo a ajuda contextual já existente em outras telas. Soltar depois de abrir a ajuda não executa a ação. Arrastar o dedo cancela a ajuda. Também funciona nos controles superiores e no cronômetro flutuante; no computador, foco pelo teclado e passagem do mouse mostram a identificação.\n\nCONFERÊNCIA E PRESERVAÇÃO\n\nCentralização e distribuição conferidas nos arquivos do APK em navegador real, de 320 a 1024 px. Testados toque prolongado, cancelamento por movimento e ausência de execução involuntária. Sem teste em Android físico.\n\nMantidos os recursos de tempo, ritmo, formatação, versões e dados do caderno. A transferência para SePrepareApp e SePrepareIphone permanece pausada.\n\nVersão 1.0.72, código 73, assinada com o certificado original. Site, APKs publicados e manifesto remoto não foram alterados."
+  "versionCode": 75,
+  "versionName": "1.0.74",
+  "downloadUrl": "https://github.com/oliverlleo/SePrepareAPK/releases/download/v1.0.74/SePrepare-1.0.74-ATUALIZACAO.apk",
+  "sha256": "be616b123981ba5c98949090ff377d6492e905aedf6c1c7a21cad88b90ecdd3b",
+  "releaseNotes": "SePrepare 1.0.74\n\nEnsaio interativo com detecção de fala\n\n• O modo Automático agora usa um modelo local para distinguir fala de ruídos. O volume do microfone deixou de ser o critério para avançar.\n• A leitura do outro participante começa após a pausa de 2, 3 ou 5 segundos sem fala detectada, mesmo com ruído de fundo.\n• Sons isolados não iniciam sua vez nem ficam zerando a contagem. A pausa começa somente depois que você fala.\n• Ganho automático do microfone desativado para evitar amplificar o ambiente nas pausas.\n• Microfone desligado durante a narração, ao pausar e ao sair. Nenhum áudio é salvo ou enviado.\n• Se a detecção falhar, o ensaio preserva sua vez e passa ao modo Manual com aviso.\n\nCompatibilidade\n\nMantidos os controles, ritmos, marcações de tempo, vozes e dados existentes. Testes de backup, importação e compartilhamento passaram.\n\nAPK 1.0.74, código 75, assinado com o mesmo certificado da 1.0.73 para atualização direta. Alteração somente no Android; o site, o Windows e o PWA não foram atualizados nesta entrega."
 }
