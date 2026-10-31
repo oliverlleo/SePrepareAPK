@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "enabled": true,
   "packageName": "br.com.orador.app",
-  "versionCode": 79,
-  "versionName": "1.0.78",
-  "downloadUrl": "https://github.com/oliverlleo/SePrepareAPK/releases/download/v1.0.78/SePrepare-1.0.78-ATUALIZACAO.apk",
-  "sha256": "f1f5142f767720c8653627a3a8ed283d34704a19c81be1ca99fe897dd46d3471",
-  "releaseNotes": "SePrepare 1.0.78 — Ações dos cartões mais acessíveis\n\n• Começar a memorizar, Atualizar cartões do texto e Voltar aos cartões agora ficam acima da lista, sem precisar percorrer todos os cartões.\n• A faixa permanece acessível durante a rolagem.\n• Os três botões ficam em uma única linha. Em celulares, os rótulos são Memorizar, Atualizar e Voltar; telas maiores exibem os nomes completos.\n• Mantidos os ícones, a área de toque e a identificação completa das ações.\n• Ajuste aplicado ao APK Android, ao SePrepareApp no Windows/PWA e ao SePrepareIphone no Apple/PWA.\n\nVerificado nos temas claro e escuro, com larguras de 320 a 1366 px. As ações de começar, atualizar e voltar continuam funcionando.\n\nAPK 1.0.78, código 79, assinado com o certificado original para atualizar a instalação existente."
+  "versionCode": 80,
+  "versionName": "1.0.79",
+  "downloadUrl": "https://github.com/oliverlleo/SePrepareAPK/releases/download/v1.0.79/SePrepare-1.0.79-ATUALIZACAO.apk",
+  "sha256": "fb6b456b20ae37f41d19d418b68fed3d747d597c7510edc59879c79d84abb626",
+  "releaseNotes": "SePrepare 1.0.79 — Memorização por ideias\n\n• Gerar cartões abre o estudo imediatamente, sem passar pelo gerenciamento.\n• Cartões mostram a ideia principal, palavras-chave e o trecho original, que pode ser ocultado.\n• Anterior e Próximo são livres. Lembrei e Preciso revisar são opcionais e não repetem cartões na mesma rodada.\n• Cada nova entrada cria outra seleção, preservando a sequência do conteúdo e os resultados anteriores. Textos curtos podem repetir ideias.\n• Minha evolução mostra as rodadas, lembrados, itens para revisar e cartões sem avaliação. A porcentagem considera somente suas autoavaliações.\n• Demonstrações permitem estudar suas falas, todas ou participantes escolhidos, com histórico separado por versão e grupo.\n• Edição manual simplificada; cartões e históricos antigos preservados.\n• Trocar de modo pausa áudio, cronômetro e ensaio interativo, conservando o tempo, a vez e a leitura.\n• Formato compatível com backup e restauração; compartilhamento comum não inclui aprendizado pessoal.\n\nDisponível no Android, Windows/PWA e Apple/PWA, com temas claro e escuro e layout responsivo.\n\nAPK 1.0.79, código 80, assinado com o certificado original para atualização."
 }
