@@ -1,0 +1,32 @@
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+}
+android {
+    namespace 'br.com.orador.app'
+    compileSdk 35
+    defaultConfig { applicationId 'br.com.orador.app'; minSdk 26; targetSdk 35; versionCode 69; versionName '1.0.68' }
+    compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
+    signingConfigs {
+        personalRelease {
+            storeFile rootProject.file('signing/orador-release.jks')
+            storePassword rootProject.file('signing/password.txt').text.trim()
+            keyAlias 'orador'
+            keyPassword rootProject.file('signing/password.txt').text.trim()
+        }
+    }
+    buildTypes {
+        release { minifyEnabled false; signingConfig signingConfigs.personalRelease }
+        debug { signingConfig signingConfigs.personalRelease }
+    }
+}
+
+dependencies {
+    implementation "com.google.android.gms:play-services-auth:22.0.0"
+    implementation platform('com.google.firebase:firebase-bom:34.19.0')
+    implementation 'com.google.firebase:firebase-analytics'
+    constraints {
+        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.21")
+        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.21")
+    }
+}
