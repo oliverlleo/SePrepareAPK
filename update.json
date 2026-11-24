@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "enabled": true,
   "packageName": "br.com.orador.app",
-  "versionCode": 94,
-  "versionName": "1.0.93",
-  "downloadUrl": "https://github.com/oliverlleo/SePrepareAPK/releases/download/v1.0.93/SePrepare-1.0.93-ATUALIZACAO.apk",
-  "sha256": "34a7eab65ace97007fbf859d68f8a787d4b5202fda190dac1fe9b70248bc8514",
-  "releaseNotes": "SePrepare 1.0.93 — Botões mais claros na apresentação\n\n• A leitura por voz passa a se chamar Leitura. O áudio do ensaio usa Reproduzir, com ícone de reprodução. O botão de anotações recebe o nome curto Nota.\n• Os mesmos nomes são usados no Android, iPhone/iPad e Windows/Web, com traduções correspondentes em inglês, espanhol e japonês.\n• O layout prioriza o celular: os botões permanecem em uma linha, com ícones, sem quebrar ou sobrepor os nomes.\n• Quando existe gravação, o cronômetro usa uma legenda mais curta para dar espaço a Gravar e Reproduzir. Em telas muito estreitas, controles secundários podem usar apenas o ícone; Reproduzir mantém o texto visível.\n• Nota e Ritmo aproveitam o espaço disponível. Em telas maiores, os demais nomes também aparecem quando couberem, preservando a coluna lateral do Windows.\n• A faixa Posição da leitura desaparece ao pausar e reaparece ao continuar. A posição é preservada. A linha do tempo da gravação continua disponível mesmo com o áudio pausado.\n\nTestes de interface nos quatro idiomas, com celulares, tablets e desktop; suítes existentes e regressões de gravação, player, versões, backup, importação e compartilhamento. Vozes simuladas nos testes, sem aparelho físico ou conta Google real.\n\nAPK assinado com o certificado original para atualizar. SePrepareApp e SePrepareIphone atualizados e mesclados no Git. APK e manifesto do site preservados."
+  "versionCode": 106,
+  "versionName": "1.2.1",
+  "downloadUrl": "https://github.com/oliverlleo/SePrepareAPK/releases/download/v1.2.1/SePrepare-1.2.1-Direto.apk",
+  "sha256": "be39dffab82bbda43990e518f1d68453b44ed78b0a7081b7615fff0aedb07756",
+  "releaseNotes": "SePrepare 1.2.1\n\n• Estatísticas de uso opcionais em Ajustes → Privacidade.\n• Indicadores de uso e falhas nos recursos do SePrepare.\n• O conteúdo do Caderno e as gravações ficam fora das estatísticas.\n• Atualização assinada para instalar por cima da versão anterior."
 }

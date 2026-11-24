@@ -8,7 +8,7 @@ O APK fica como anexo de uma **Release pública deste repositório**. O campo `d
 
 https://github.com/oliverlleo/SePrepareAPK/releases/download/v1.0.42/SePrepare-1.0.42-ATUALIZACAO.apk
 
-A versão 1.0.42 está publicada nessa Release, com o SHA-256 do anexo conferido e o anúncio ativo em `update.json`. A página Baixar do site não participa deste fluxo.
+A versão pública é a [1.2.1 (código 106)](https://github.com/oliverlleo/SePrepareAPK/releases/tag/v1.2.1). O SHA-256 do APK e as notas acompanham o manifesto `update.json`. As estatísticas de uso do APK são opcionais em Ajustes → Privacidade. A contagem de downloads do GitHub e as estatísticas do aplicativo são medidas independentes.
 
 ## Manifesto consultado
 
