@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "enabled": true,
   "packageName": "br.com.orador.app",
-  "versionCode": 106,
-  "versionName": "1.2.1",
-  "downloadUrl": "https://github.com/oliverlleo/SePrepareAPK/releases/download/v1.2.1/SePrepare-1.2.1-Direto.apk",
-  "sha256": "be39dffab82bbda43990e518f1d68453b44ed78b0a7081b7615fff0aedb07756",
-  "releaseNotes": "SePrepare 1.2.1\n\n• Estatísticas de uso opcionais em Ajustes → Privacidade.\n• Indicadores de uso e falhas nos recursos do SePrepare.\n• O conteúdo do Caderno e as gravações ficam fora das estatísticas.\n• Atualização assinada para instalar por cima da versão anterior."
+  "versionCode": 107,
+  "versionName": "1.2.2",
+  "downloadUrl": "https://github.com/oliverlleo/SePrepareAPK/releases/download/v1.2.2/SePrepare-1.2.2-Direto.apk",
+  "sha256": "3b64915729536671c4cda79b6609981397488bb90b274af4cadad1ab63a934fa",
+  "releaseNotes": "SePrepare 1.2.2\n\n• Estatísticas de uso ativas por padrão para melhorar os recursos, com opção de desligar a qualquer momento em Ajustes → Privacidade.\n• Indicadores de uso e falhas nos recursos do SePrepare.\n• O conteúdo do Caderno e as gravações ficam fora das estatísticas.\n• Atualização assinada para instalar por cima da versão anterior."
 }
