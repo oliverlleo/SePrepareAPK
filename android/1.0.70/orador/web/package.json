@@ -1,0 +1,35 @@
+{
+  "name": "seprepare-editor",
+  "version": "1.0.70",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "test:share-code": "node verify-share-code.mjs",
+    "test:audio": "node verify-audio-core.mjs",
+    "test:playback": "node verify-playback-core.mjs",
+    "test:voices": "node verify-voice-catalog.mjs",
+    "test:incremental": "node verify-content-index.mjs && node verify-sync-integrity.mjs && node verify-sync-drafts.mjs && node verify-sync-globals.mjs",
+    "test:globals": "node verify-sync-globals.mjs",
+    "test": "node verify-sync-integrity.mjs && node verify-sync-globals.mjs && npm run test:backup-editor",
+    "test:backup-interval": "node verify-backup-choices.mjs",
+    "test:backup-editor": "node verify-backup-editor-flow.mjs && node verify-editor-persistence.mjs",
+    "test:time": "node verify-time-mark-core.mjs && node verify-time-mark-integrations.mjs && node verify-time-mark-app.mjs"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.2.0",
+    "@fontsource/lora": "^5.2.0",
+    "@huggingface/transformers": "3.8.1",
+    "dictionary-pt": "^4.0.0",
+    "dompurify": "^3.3.0",
+    "fflate": "0.8.2",
+    "hunspell-wasm": "0.3.0",
+    "lucide": "^0.468.0",
+    "marked": "^16.0.0",
+    "quill": "2.0.3"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0",
+    "ws": "^8.18.3"
+  }
+}
