@@ -1,0 +1,17 @@
+/* One owner for the presentation controls, loaded after the feature styles. */
+.reader-controls{display:grid;grid-template-columns:minmax(0,1fr);align-items:start;gap:8px;padding:0 17px 18px;min-width:0}
+.reader-controls .reader-primary-timer{display:flex;align-items:center;gap:6px;min-width:0;height:46px}
+.reader-controls .reader-primary-timer .start-reading{display:inline-flex;align-items:center;justify-content:center;flex:1 1 auto;min-width:0;height:46px;min-height:46px;max-height:46px;padding:10px 12px;gap:8px;font-size:13px;line-height:1.25;white-space:nowrap;border-radius:13px}
+.reader-controls .reader-primary-timer .start-reading svg{width:20px;height:20px}
+.reader-controls .reader-primary-timer .timer-stop{flex:0 0 44px;width:44px;min-width:44px;height:44px;min-height:44px;align-self:center}
+.reader-controls .reader-subtools{display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;justify-content:flex-start;gap:4px;min-width:0;height:44px}
+.reader-controls .reader-subtools>.btn,.reader-controls .reader-subtools>.icon-btn{box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;flex:0 0 44px;width:44px;min-width:44px;max-width:none;height:44px;min-height:44px;max-height:44px;padding:0;gap:6px;border-radius:12px;font-size:12px;line-height:1.2;white-space:nowrap;position:relative}
+.reader-controls .reader-subtools svg{flex:0 0 20px;width:20px;height:20px}
+.reader-controls .reader-subtools>.btn[data-action="speak"]{flex:0 0 auto;width:auto;min-width:72px;padding:8px 10px}
+.reader-subtools .reader-tool-label{position:fixed;left:-10000px;top:0;display:block;visibility:hidden;font:600 12px/1.2 Inter,Arial,sans-serif;white-space:nowrap;pointer-events:none}
+.reader-controls .reader-subtools.show-tool-names>.icon-btn{flex:0 0 auto;width:auto;padding-inline:10px}
+.reader-subtools.show-tool-names .reader-tool-label{position:static;visibility:visible}
+.reader-controls .reader-subtools.icon-only-audio>.btn[data-action="speak"]{flex:0 0 44px;width:44px;min-width:44px;padding:0}
+.reader-subtools.icon-only-audio>[data-action="speak"]>span{position:fixed;left:-10000px;top:0;visibility:hidden;white-space:nowrap}
+@media(max-width:359px){.reader-controls{padding-inline:12px}.reader-controls .reader-subtools{gap:3px}}
+@media(min-width:800px){.reader-controls{grid-template-columns:minmax(0,272px) minmax(0,1fr);gap:10px;padding-inline:24px}}
